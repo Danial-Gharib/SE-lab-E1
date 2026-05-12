@@ -1,0 +1,6 @@
+# created git ignore
+.vscode/
+.idea/
+.env
+.env.local
+*.log
