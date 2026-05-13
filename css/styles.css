@@ -151,6 +151,15 @@ h2 {
   border: 1px solid var(--border);
 }
 
+.theme-toggle:hover,
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle,
+.button {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
 .cards,
 
 .card,
