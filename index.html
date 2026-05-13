@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SE Lab - Experiment 1 - Dashboard</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">SE Lab Dashboard</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#team">Team</a>
+      </div>
+
+      <button id="themeToggle" class="theme-toggle" type="button">
+        Toggle Theme
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">Software Engineering Lab</p>
+        <h1>Static Frontend with Automatic Deployment</h1>
+        <p>
+          Salaam! This is a collaborative static frontend project built with HTML, CSS, JavaScript,
+          Git, GitHub pull requests, GitHub Actions, and GitHub Pages.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#workflow" class="button primary">View Workflow</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section card-section">
+      <div class="section-heading">
+        <p class="eyebrow">Experiment Goal</p>
+        <h2>What this project demonstrates</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Static Frontend</h3>
+          <p>
+            The application is implemented using pure HTML, CSS, and JavaScript.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Git Workflow</h3>
+          <p>
+            The project uses branches, commits, pull requests, and conflict resolution.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Automatic Deployment</h3>
+          <p>
+            GitHub Actions deploys the site automatically to GitHub Pages.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section workflow-section">
+      <div class="section-heading">
+        <p class="eyebrow">Development Workflow</p>
+        <h2>Branches used in the project</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>Main</span>
+          <p>Protected production branch deployed to GitHub Pages.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>Dev</span>
+          <p>Integration branch where feature branches are merged first.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>Feature Branches</span>
+          <p>Separate branches for layout, theme, documentation, and fixes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section card-section">
+      <div class="section-heading">
+        <p class="eyebrow">Collaboration</p>
+        <h2>Team members</h2>
+      </div>
+
+      <div class="cards team-grid">
+        <article class="card team-card">
+          <h3>Danial Gharib : 400105155</h3>
+          <p>CE at Sharif University of Technology - Entrance year: 1400</p>
+        </article>
+
+        <article class="card team-card">
+          <h3>Payam Taebi : 400105155</h3>
+          <p>CE at Sharif University of Technology - Entrance year: 1400</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for Software Engineering Lab - Week 1 Experiment.</p> </br>
+    <p>Sharif University of Technology</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
