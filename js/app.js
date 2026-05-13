@@ -8,14 +8,15 @@ function toggleTheme() {
 
   html.setAttribute("data-theme", nextTheme);
   localStorage.setItem("theme", nextTheme);
+
+  themeToggle.textContent = nextTheme === "dark" ? "Use Light Theme" : "Use Dark Theme";
 }
 
 function loadSavedTheme() {
-  const savedTheme = localStorage.getItem("theme");
+  const savedTheme = localStorage.getItem("theme") || "light";
 
-  if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  themeToggle.textContent = savedTheme === "dark" ? "Use Light Theme" : "Use Dark Theme";
 }
 
 loadSavedTheme();
