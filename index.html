@@ -104,6 +104,69 @@
       <div class="command-grid" id="commandGrid"></div>
     </section>
 
+
+    <section id="workflow-visualizer" class="section workflow-visualizer-section">
+      <div class="section-header">
+        <p class="eyebrow">Repository Workflow</p>
+        <h2>Branching Workflow Visualizer</h2>
+        <p>
+          This project follows a branch-based workflow where features are developed
+          separately, reviewed through pull requests, merged into the development
+          branch, and finally released through the protected main branch.
+        </p>
+      </div>
+    
+      <div class="workflow-flow">
+        <article class="workflow-node feature-node">
+          <span class="node-label">Feature Branches</span>
+          <h3>feature/*</h3>
+          <p>
+            New website features, UI sections, and documentation changes are built
+            in isolated branches.
+          </p>
+          <ul>
+            <li>feature/site-improvements</li>
+            <li>feature/github-pages-deploy</li>
+            <li>feature/project-shell</li>
+          </ul>
+        </article>
+    
+        <div class="workflow-arrow" aria-hidden="true">→</div>
+    
+        <article class="workflow-node dev-node">
+          <span class="node-label">Integration Branch</span>
+          <h3>dev</h3>
+          <p>
+            Completed feature branches are merged into dev first, so the team can
+            review combined changes before production release.
+          </p>
+        </article>
+    
+        <div class="workflow-arrow" aria-hidden="true">→</div>
+    
+        <article class="workflow-node main-node">
+          <span class="node-label">Protected Branch</span>
+          <h3>main</h3>
+          <p>
+            The main branch is protected and receives changes through pull requests
+            only. This branch represents the deployable version of the project.
+          </p>
+        </article>
+    
+        <div class="workflow-arrow" aria-hidden="true">→</div>
+    
+        <article class="workflow-node deploy-node">
+          <span class="node-label">Deployment</span>
+          <h3>GitHub Pages</h3>
+          <p>
+            After updates reach main, GitHub Actions builds and deploys the static
+            frontend automatically to GitHub Pages.
+          </p>
+        </article>
+      </div>
+    </section>
+    
+
     <section id="workflow" class="section workflow-section">
       <div class="section-heading">
         <p class="eyebrow">Development Workflow</p>
