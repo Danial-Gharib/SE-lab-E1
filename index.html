@@ -71,6 +71,39 @@
       </div>
     </section>
 
+
+    <section id="git-cheatsheet" class="section git-cheatsheet-section">
+      <div class="section-header">
+        <p class="eyebrow">Git Learning Tool</p>
+        <h2>Interactive Git Command Cheat Sheet</h2>
+        <p>
+          Search and filter common Git commands used during the development,
+          collaboration, conflict resolution, and deployment workflow of this project.
+        </p>
+      </div>
+    
+      <div class="cheatsheet-controls">
+        <input
+          type="text"
+          id="commandSearch"
+          placeholder="Search commands, for example: commit, branch, merge..."
+          aria-label="Search Git commands"
+        />
+    
+        <div class="command-filters" id="commandFilters">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="setup">Setup</button>
+          <button class="filter-btn" data-category="branching">Branching</button>
+          <button class="filter-btn" data-category="committing">Committing</button>
+          <button class="filter-btn" data-category="merging">Merging</button>
+          <button class="filter-btn" data-category="remote">Remote</button>
+          <button class="filter-btn" data-category="undo">Undo</button>
+        </div>
+      </div>
+    
+      <div class="command-grid" id="commandGrid"></div>
+    </section>
+
     <section id="workflow" class="section workflow-section">
       <div class="section-heading">
         <p class="eyebrow">Development Workflow</p>
