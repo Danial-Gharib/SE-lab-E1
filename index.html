@@ -12,6 +12,10 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="#home" class="logo">SE Lab Dashboard</a>
+      <a href="#workflow-visualizer">Workflow</a>
+      <a href="#git-cheatsheet">Git Commands</a>
+      <a href="#deployment-pipeline">Deployment</a>
+      <a href="#task-board">Tasks</a>
 
       <div class="nav-links">
         <a href="#about">About</a>
@@ -19,9 +23,13 @@
         <a href="#team">Team</a>
       </div>
 
-      <button id="themeToggle" class="theme-toggle" type="button">
-        Toggle Theme
+
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <span class="theme-toggle-icon">🌙</span>
+        <span class="theme-toggle-text">Dark</span>
       </button>
+
+
     </nav>
   </header>
 
@@ -70,6 +78,294 @@
         </article>
       </div>
     </section>
+
+
+    <section id="git-cheatsheet" class="section git-cheatsheet-section">
+      <div class="section-header">
+        <p class="eyebrow">Git Learning Tool</p>
+        <h2>Interactive Git Command Cheat Sheet</h2>
+        <p>
+          Search and filter common Git commands used during the development,
+          collaboration, conflict resolution, and deployment workflow of this project.
+        </p>
+      </div>
+    
+      <div class="cheatsheet-controls">
+        <input
+          type="text"
+          id="commandSearch"
+          placeholder="Search commands, for example: commit, branch, merge..."
+          aria-label="Search Git commands"
+        />
+    
+        <div class="command-filters" id="commandFilters">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="setup">Setup</button>
+          <button class="filter-btn" data-category="branching">Branching</button>
+          <button class="filter-btn" data-category="committing">Committing</button>
+          <button class="filter-btn" data-category="merging">Merging</button>
+          <button class="filter-btn" data-category="remote">Remote</button>
+          <button class="filter-btn" data-category="undo">Undo</button>
+        </div>
+      </div>
+    
+      <div class="command-grid" id="commandGrid"></div>
+    </section>
+
+
+    <section id="workflow-visualizer" class="section workflow-visualizer-section">
+      <div class="section-header">
+        <p class="eyebrow">Repository Workflow</p>
+        <h2>Branching Workflow Visualizer</h2>
+        <p>
+          This project follows a branch-based workflow where features are developed
+          separately, reviewed through pull requests, merged into the development
+          branch, and finally released through the protected main branch.
+        </p>
+      </div>
+    
+      <div class="workflow-flow">
+        <article class="workflow-node feature-node">
+          <span class="node-label">Feature Branches</span>
+          <h3>feature/*</h3>
+          <p>
+            New website features, UI sections, and documentation changes are built
+            in isolated branches.
+          </p>
+          <ul>
+            <li>feature/site-improvements</li>
+            <li>feature/github-pages-deploy</li>
+            <li>feature/project-shell</li>
+          </ul>
+        </article>
+    
+        <div class="workflow-arrow" aria-hidden="true">→</div>
+    
+        <article class="workflow-node dev-node">
+          <span class="node-label">Integration Branch</span>
+          <h3>dev</h3>
+          <p>
+            Completed feature branches are merged into dev first, so the team can
+            review combined changes before production release.
+          </p>
+        </article>
+    
+        <div class="workflow-arrow" aria-hidden="true">→</div>
+    
+        <article class="workflow-node main-node">
+          <span class="node-label">Protected Branch</span>
+          <h3>main</h3>
+          <p>
+            The main branch is protected and receives changes through pull requests
+            only. This branch represents the deployable version of the project.
+          </p>
+        </article>
+    
+        <div class="workflow-arrow" aria-hidden="true">→</div>
+    
+        <article class="workflow-node deploy-node">
+          <span class="node-label">Deployment</span>
+          <h3>GitHub Pages</h3>
+          <p>
+            After updates reach main, GitHub Actions builds and deploys the static
+            frontend automatically to GitHub Pages.
+          </p>
+        </article>
+      </div>
+    </section>
+    
+
+
+    <section id="deployment-pipeline" class="section deployment-pipeline-section">
+      <div class="section-header">
+        <p class="eyebrow">Continuous Deployment</p>
+        <h2>Deployment Pipeline Timeline</h2>
+        <p>
+          The project is deployed automatically after approved changes reach the
+          protected main branch. GitHub Actions prepares the static files and
+          publishes them through GitHub Pages.
+        </p>
+      </div>
+    
+      <div class="pipeline-timeline">
+        <article class="pipeline-step">
+          <span class="step-number">01</span>
+          <h3>Develop Locally</h3>
+          <p>
+            Team members create feature branches and implement changes locally using
+            Git commands from the terminal.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">02</span>
+          <h3>Push Feature Branch</h3>
+          <p>
+            Completed commits are pushed to GitHub on a separate branch instead of
+            being pushed directly to main.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">03</span>
+          <h3>Open Pull Request</h3>
+          <p>
+            The branch is reviewed through a pull request before being merged into
+            dev or main.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">04</span>
+          <h3>Merge to Main</h3>
+          <p>
+            After review, changes are merged into the protected main branch through
+            a pull request.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">05</span>
+          <h3>Run GitHub Actions</h3>
+          <p>
+            The deployment workflow uploads the static frontend files as a GitHub
+            Pages artifact.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">06</span>
+          <h3>Publish on GitHub Pages</h3>
+          <p>
+            GitHub Pages serves the latest version of the static website from the
+            successful workflow run.
+          </p>
+        </article>
+      </div>
+    
+      <div class="deployment-links">
+        <a
+          href="https://danial-gharib.github.io/SE-lab-E1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deployment-link"
+        >
+          Open Live Website
+        </a>
+    
+        <a
+          href="https://github.com/Danial-Gharib/SE-lab-E1/actions"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deployment-link secondary"
+        >
+          View GitHub Actions
+        </a>
+      </div>
+    </section>
+
+
+    <section id="task-board" class="section task-board-section">
+      <div class="section-header">
+        <p class="eyebrow">Project Management</p>
+        <h2>Team Task Board</h2>
+        <p>
+          This board summarizes the main implementation, documentation, and
+          deployment tasks followed during the project.
+        </p>
+      </div>
+    
+      <div class="task-board">
+        <article class="task-column">
+          <div class="task-column-header">
+            <h3>Todo</h3>
+            <span>3 tasks</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Add theme toggle</h4>
+            <p>Implement light and dark mode with localStorage persistence.</p>
+            <span class="task-owner">Owner: Payam</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Complete README report</h4>
+            <p>Write implementation details, branch explanation, and deployment report.</p>
+            <span class="task-owner">Owner: Team</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Record final video</h4>
+            <p>Show Git workflow, conflicts, PRs, deployment, and final website.</p>
+            <span class="task-owner">Owner: Team</span>
+          </div>
+        </article>
+    
+        <article class="task-column">
+          <div class="task-column-header">
+            <h3>In Progress</h3>
+            <span>2 tasks</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Improve frontend sections</h4>
+            <p>Add useful project sections to make the website more complete.</p>
+            <span class="task-owner">Owner: Payam</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Prepare conflict evidence</h4>
+            <p>Create and resolve a second conflict for the assignment requirement.</p>
+            <span class="task-owner">Owner: Team</span>
+          </div>
+        </article>
+    
+        <article class="task-column">
+          <div class="task-column-header">
+            <h3>Review</h3>
+            <span>2 tasks</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Check GitHub Pages deployment</h4>
+            <p>Verify that the latest main branch version is published successfully.</p>
+            <span class="task-owner">Owner: Danial</span>
+          </div>
+    
+          <div class="task-card">
+            <h4>Review branch protection</h4>
+            <p>Confirm that main only accepts changes through pull requests.</p>
+            <span class="task-owner">Owner: Team</span>
+          </div>
+        </article>
+    
+        <article class="task-column">
+          <div class="task-column-header">
+            <h3>Done</h3>
+            <span>3 tasks</span>
+          </div>
+    
+          <div class="task-card done">
+            <h4>Create static frontend</h4>
+            <p>Build the initial HTML, CSS, and JavaScript website.</p>
+            <span class="task-owner">Owner: Danial</span>
+          </div>
+    
+          <div class="task-card done">
+            <h4>Configure GitHub Actions</h4>
+            <p>Add automatic deployment workflow for GitHub Pages.</p>
+            <span class="task-owner">Owner: Danial</span>
+          </div>
+    
+          <div class="task-card done">
+            <h4>Add Git command cheat sheet</h4>
+            <p>Create searchable and filterable Git command cards.</p>
+            <span class="task-owner">Owner: Payam</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
 
     <section id="workflow" class="section workflow-section">
       <div class="section-heading">
