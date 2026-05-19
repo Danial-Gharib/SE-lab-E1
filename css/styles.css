@@ -709,3 +709,7 @@ html[data-theme="dark"] .task-owner {
   background: rgba(226, 232, 240, 0.1);
   color: #e2e8f0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
