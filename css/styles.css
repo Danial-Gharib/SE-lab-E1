@@ -745,13 +745,30 @@ html {
 
 
 
+@media (max-width: 520px) {
+  .command-card,
+  .workflow-node,
+  .pipeline-step,
+  .task-column,
+  .task-card {
+    border-radius: 16px;
+    padding: 0.9rem;
+  }
 
+  .command-grid,
+  .pipeline-timeline,
+  .task-board {
+    gap: 0.8rem;
+  }
 
+  .command-filters {
+    gap: 0.5rem;
+  }
 
-
-
-
-
-
-
-
+  .filter-btn,
+  .deployment-link,
+  .theme-toggle {
+    padding: 0.58rem 0.78rem;
+    font-size: 0.88rem;
+  }
+}
