@@ -4,7 +4,7 @@
 
 ## Workflow Summary
 
-This project uses Git branches and pull requests to manage the static frontend development process.
+This project uses GitHub Actions, GitHub Pages, and protected branches to automate and control deployment.
 
 
 
