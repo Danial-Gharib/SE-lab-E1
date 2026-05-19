@@ -713,3 +713,32 @@ html[data-theme="dark"] .task-owner {
 html {
   scroll-behavior: smooth;
 }
+
+.section {
+  scroll-margin-top: 90px;
+}
+
+.section + .section {
+  margin-top: 2rem;
+}
+
+.section-header {
+  max-width: 820px;
+}
+
+.section-header p {
+  line-height: 1.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
