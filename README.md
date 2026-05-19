@@ -4,8 +4,7 @@
 
 ## Workflow Summary
 
-This project uses GitHub Actions, GitHub Pages, and protected branches to automate and control deployment.
-
+This project uses feature branches, pull requests, code review, protected branches, GitHub Actions, and GitHub Pages to manage development and automate deployment.
 
 
 This project is a static frontend application for the Software Engineering Lab experiment.
