@@ -169,6 +169,96 @@
     </section>
     
 
+
+    <section id="deployment-pipeline" class="section deployment-pipeline-section">
+      <div class="section-header">
+        <p class="eyebrow">Continuous Deployment</p>
+        <h2>Deployment Pipeline Timeline</h2>
+        <p>
+          The project is deployed automatically after approved changes reach the
+          protected main branch. GitHub Actions prepares the static files and
+          publishes them through GitHub Pages.
+        </p>
+      </div>
+    
+      <div class="pipeline-timeline">
+        <article class="pipeline-step">
+          <span class="step-number">01</span>
+          <h3>Develop Locally</h3>
+          <p>
+            Team members create feature branches and implement changes locally using
+            Git commands from the terminal.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">02</span>
+          <h3>Push Feature Branch</h3>
+          <p>
+            Completed commits are pushed to GitHub on a separate branch instead of
+            being pushed directly to main.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">03</span>
+          <h3>Open Pull Request</h3>
+          <p>
+            The branch is reviewed through a pull request before being merged into
+            dev or main.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">04</span>
+          <h3>Merge to Main</h3>
+          <p>
+            After review, changes are merged into the protected main branch through
+            a pull request.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">05</span>
+          <h3>Run GitHub Actions</h3>
+          <p>
+            The deployment workflow uploads the static frontend files as a GitHub
+            Pages artifact.
+          </p>
+        </article>
+    
+        <article class="pipeline-step">
+          <span class="step-number">06</span>
+          <h3>Publish on GitHub Pages</h3>
+          <p>
+            GitHub Pages serves the latest version of the static website from the
+            successful workflow run.
+          </p>
+        </article>
+      </div>
+    
+      <div class="deployment-links">
+        <a
+          href="https://danial-gharib.github.io/SE-lab-E1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deployment-link"
+        >
+          Open Live Website
+        </a>
+    
+        <a
+          href="https://github.com/Danial-Gharib/SE-lab-E1/actions"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deployment-link secondary"
+        >
+          View GitHub Actions
+        </a>
+      </div>
+    </section>
+
+
     <section id="workflow" class="section workflow-section">
       <div class="section-heading">
         <p class="eyebrow">Development Workflow</p>
