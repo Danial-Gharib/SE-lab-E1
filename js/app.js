@@ -1,29 +1,52 @@
-const themeToggle = document.querySelector("#themeToggle");
+const themeToggle = document.getElementById("themeToggle");
 
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("preferred-theme", theme);
 
-function toggleTheme() {
-  const html = document.documentElement;
-  const currentTheme = html.getAttribute("data-theme");
-  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+  if (!themeToggle) return;
 
-  html.setAttribute("data-theme", nextTheme);
-  localStorage.setItem("theme", nextTheme);
+  const themeToggleIcon = themeToggle.querySelector(".theme-toggle-icon");
+  const themeToggleText = themeToggle.querySelector(".theme-toggle-text");
 
-  themeToggle.textContent = nextTheme === "dark" ? "Use Light Theme" : "Use Dark Theme";
+  if (theme === "dark") {
+    if (themeToggleIcon) themeToggleIcon.textContent = "☀️";
+    if (themeToggleText) {
+      themeToggleText.textContent = "Light";
+    } else {
+      themeToggle.textContent = "Use Light Theme";
+    }
+  } else {
+    if (themeToggleIcon) themeToggleIcon.textContent = "🌙";
+    if (themeToggleText) {
+      themeToggleText.textContent = "Dark";
+    } else {
+      themeToggle.textContent = "Use Dark Theme";
+    }
+  }
 }
 
 function loadSavedTheme() {
-  const savedTheme = localStorage.getItem("theme") || "light";
+  const savedTheme = localStorage.getItem("preferred-theme") || "light";
+  applyTheme(savedTheme);
+}
 
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  themeToggle.textContent = savedTheme === "dark" ? "Use Light Theme" : "Use Dark Theme";
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") || "light";
+
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
 }
 
 loadSavedTheme();
 
-themeToggle.addEventListener("click", toggleTheme);
 
-
+// =========================
+// Git Command Cheat Sheet
+// =========================
 
 const gitCommands = [
   {
@@ -47,7 +70,7 @@ const gitCommands = [
     description: "Adds file changes to the staging area."
   },
   {
-    command: "git commit -m \"message\"",
+    command: 'git commit -m "message"',
     category: "committing",
     description: "Saves a snapshot of staged changes with a meaningful message."
   },
@@ -122,7 +145,9 @@ let activeCategory = "all";
 function renderCommands() {
   if (!commandGrid) return;
 
-  const searchText = commandSearch ? commandSearch.value.toLowerCase().trim() : "";
+  const searchText = commandSearch
+    ? commandSearch.value.toLowerCase().trim()
+    : "";
 
   const filteredCommands = gitCommands.filter((item) => {
     const matchesCategory =
@@ -136,6 +161,13 @@ function renderCommands() {
     return matchesCategory && matchesSearch;
   });
 
+  if (filteredCommands.length === 0) {
+    commandGrid.innerHTML = `
+      <p class="empty-state">No Git command matched your search.</p>
+    `;
+    return;
+  }
+
   commandGrid.innerHTML = filteredCommands
     .map(
       (item) => `
@@ -147,12 +179,6 @@ function renderCommands() {
       `
     )
     .join("");
-
-  if (filteredCommands.length === 0) {
-    commandGrid.innerHTML = `
-      <p class="empty-state">No Git command matched your search.</p>
-    `;
-  }
 }
 
 if (commandSearch) {
@@ -176,36 +202,3 @@ if (commandFilters) {
 }
 
 renderCommands();
-
-
-const themeToggle = document.getElementById("themeToggle");
-const themeToggleIcon = document.querySelector(".theme-toggle-icon");
-const themeToggleText = document.querySelector(".theme-toggle-text");
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("preferred-theme", theme);
-
-  if (themeToggleIcon && themeToggleText) {
-    if (theme === "dark") {
-      themeToggleIcon.textContent = "☀️";
-      themeToggleText.textContent = "Light";
-    } else {
-      themeToggleIcon.textContent = "🌙";
-      themeToggleText.textContent = "Dark";
-    }
-  }
-}
-
-const savedTheme = localStorage.getItem("preferred-theme") || "light";
-applyTheme(savedTheme);
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const nextTheme = currentTheme === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
-  });
-}
-
-
