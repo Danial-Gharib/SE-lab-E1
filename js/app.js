@@ -176,3 +176,36 @@ if (commandFilters) {
 }
 
 renderCommands();
+
+
+const themeToggle = document.getElementById("themeToggle");
+const themeToggleIcon = document.querySelector(".theme-toggle-icon");
+const themeToggleText = document.querySelector(".theme-toggle-text");
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("preferred-theme", theme);
+
+  if (themeToggleIcon && themeToggleText) {
+    if (theme === "dark") {
+      themeToggleIcon.textContent = "☀️";
+      themeToggleText.textContent = "Light";
+    } else {
+      themeToggleIcon.textContent = "🌙";
+      themeToggleText.textContent = "Dark";
+    }
+  }
+}
+
+const savedTheme = localStorage.getItem("preferred-theme") || "light";
+applyTheme(savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
+}
+
+
