@@ -71,9 +71,9 @@ SE-lab-E1/
 │   └── workflows/
 │       └── deploy.yml
 ├── css/
-│   └── style.css
+│   └── styles.css
 ├── js/
-│   └── main.js
+│   └── app.js
 ├── index.html
 ├── .gitignore
 └── README.md
@@ -82,8 +82,8 @@ SE-lab-E1/
 Main files:
 
 - `index.html`: contains the static page structure.
-- `css/style.css`: contains layout, responsive styling, hover effects, and light/dark theme styles.
-- `js/main.js`: contains interactive behavior such as command filtering, search, and theme switching.
+- `css/styles.css`: contains layout, responsive styling, hover effects, and light/dark theme styles.
+- `js/app.js`: contains interactive behavior such as command filtering, search, and theme switching.
 - `.github/workflows/deploy.yml`: contains the GitHub Actions workflow for deployment.
 - `.gitignore`: prevents unnecessary files from being tracked.
 - `README.md`: contains the experiment report and Git theory answers.
@@ -504,10 +504,10 @@ Before final submission, the following checks are used:
 - [x] Pull requests were used for merging.
 - [x] GitHub Actions workflow exists.
 - [x] GitHub Pages deployment works.
-- [ ] Main branch protection verified.
-- [ ] Final `dev` to `main` pull request completed.
-- [ ] Latest GitHub Actions deployment checked after final merge.
-- [ ] Final video recorded.
+- [x] Main branch protection verified.
+- [x] Final `dev` to `main` pull request completed.
+- [x] Latest GitHub Actions deployment checked after final merge.
+- [x] Final video recorded.
 
 ---
 
@@ -515,7 +515,7 @@ Before final submission, the following checks are used:
 
 | Requirement | Status | Evidence |
 |---|---|---|
-| Static frontend implemented | Done | `index.html`, `css/style.css`, `js/main.js` |
+| Static frontend implemented | Done | `index.html`, `css/styles.css`, `js/app.js` |
 | Git used during development | Done | Commit history |
 | `.gitignore` used | Done | `.gitignore` file |
 | At least 20 meaningful commits | Done | More than 20 commits in Git history |
@@ -525,10 +525,10 @@ Before final submission, the following checks are used:
 | GitHub Project / Kanban board used | Done | `SE-lab-HW1` project board |
 | GitHub Actions used | Done | `.github/workflows/deploy.yml` |
 | GitHub Pages deployment | Done | Live website URL |
-| Main branch protected | Pending verification | GitHub branch protection settings |
-| README report written | In progress | This README |
-| Theory questions answered | Pending | Git theory section |
-| Video recorded | Pending | Submitted separately |
+| Main branch protected | Donen | GitHub branch protection settings |
+| README report written | Done | This README |
+| Theory questions answered | Done | Git theory section |
+| Video recorded | Done | Submitted separately |
 
 ---
 
