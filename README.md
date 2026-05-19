@@ -4,7 +4,7 @@
 
 ## Workflow Summary
 
-This project uses feature branches, pull requests, and code review to manage the static frontend development process.
+This project uses feature branches, pull requests, code review, protected branches, GitHub Actions, and GitHub Pages to manage development and automate deployment.
 
 
 This project is a static frontend application for the Software Engineering Lab experiment.
