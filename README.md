@@ -1,5 +1,13 @@
 # SE Lab HW1
 
+
+
+## Workflow Summary
+
+This project uses Git branches and pull requests to manage the static frontend development process.
+
+
+
 This project is a static frontend application for the Software Engineering Lab experiment.
 
 ## Team Members
